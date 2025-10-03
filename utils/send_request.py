@@ -26,5 +26,6 @@ def send_jdbc_request(sql, index=0):
 
     cur.close()
     conn.close()
+    print("🔹result[index]:", result[index])
     return result[index]
 
