@@ -1,15 +1,15 @@
 import openpyxl
 
+from config.config import EXCEL_FILE, EXCEL_SHEET_NAME
 
 
-
-def read_excel():
+def read_excel(file_path=EXCEL_FILE, sheet_name=EXCEL_SHEET_NAME):
     # 打开 excel 文件
-    workbook = openpyxl.load_workbook("./data/api_testcases.xlsx")  # 这里替换成你的文件路径
+    workbook = openpyxl.load_workbook(file_path)  # 这里替换成你的文件路径
     # workbook = openpyxl.load_workbook("../data/api_testcases.xlsx")
 
     # 选择表
-    worksheet = workbook["Sheet1"]
+    worksheet = workbook[sheet_name]
 
     # 读取数据操作
     # 思路：因为 dict(zip(keys, value)) 可以把读取到的数据变成字典类型
